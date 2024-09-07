@@ -1,0 +1,96 @@
+.Slogo_body{
+    border-radius: 50%;
+    width: 80px !important;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Sfront_img{
+    background-image: url(../../assets/seminar.png);
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+}
+/* Center the login container */
+.Slogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f0f2f5; */
+}
+
+.Slogin-form {
+    padding: 5px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Slogin-form input[type="text"] {
+    width: calc(80%);
+    /* padding: 18px; */
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+.Slogin-form input[type="password"] {
+    width: calc(100%);
+    /* padding: 18px; */
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+
+.Slogin-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff9900d7;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+    transition:background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+.Slogin-form button:hover {
+    background-color: #ff9100;
+    background-color: #ff9100;
+    transform: scale(1.01);
+}
+
+.google_btn, .google-btn{
+    width: 100% !important;
+}
+.google_btn:hover{
+    background-color: #e4e3e3 !important;
+}
+.google-btn:hover{
+    background-color: #1f1f1f !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .Slogin-form {
+        padding: 20px;
+    }
+
+    .Slogin-form input[type="text"],
+    .Slogin-form input[type="password"] {
+        font-size: 14px;
+    }
+
+    .Slogin-form button {
+        font-size: 16px;
+    }
+}

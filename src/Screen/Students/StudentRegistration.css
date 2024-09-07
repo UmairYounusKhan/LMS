@@ -1,0 +1,84 @@
+/* Style for the form container */
+
+form {
+    max-width: 500px;
+    margin: 0px auto; 
+    /* margin-left: 700px; */
+    
+    
+  }
+  
+  /* Style for the heading */
+  form h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Style for labels */
+  form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-left: 2px;
+    color: #555;
+  }
+  
+  /* Style for input fields */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="number"],
+  form input[type="date"] {
+    display: block;
+    width: calc(100%);
+    margin: 10px auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form input::placeholder {
+    color: #999;
+    font-size: 13px;
+    
+  }
+  input:focus{
+    outline: none;
+  }
+  
+  /* Style for gender options */
+  form h5 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+    color: #333;
+  }
+  
+  form input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  /* Style for the submit button */
+  form .Button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1a7c01;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 10px;
+  }
+  
+  form .Button:hover {
+    background-color:  #22a301;
+    transform: scale(1.02);
+  }
+  
