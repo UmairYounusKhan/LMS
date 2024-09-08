@@ -105,16 +105,21 @@ export default function DataTable() {
 
   return (
     <>
-      <Paper sx={{ height: 400, width: '100%' }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          initialState={{ pagination: { paginationModel } }}
-          pageSizeOptions={[5, 10]}
-          checkboxSelection
-          sx={{ border: 0 }}
-        />
-      </Paper>
+      <Paper sx={{ height: 400, width: '100%', overflowX: 'auto', '@media (max-width: 1024px)': {
+          width: '695px'}, '@media (max-width: 768px)': {
+            width: '720px'}, '@media (max-width: 600px)': {
+            width: '380px'}}}>
+  <div style={{ maxwidth: '100%' }}> {/* Set a minimum width larger than the total column width */}
+    <DataGrid
+      rows={rows}
+      columns={columns}
+      initialState={{ pagination: { paginationModel } }}
+      pageSizeOptions={[5, 10]}
+      checkboxSelection
+      sx={{ border: 0 }}
+    />
+  </div>
+</Paper>
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Edit Student</DialogTitle>
         <DialogContent>

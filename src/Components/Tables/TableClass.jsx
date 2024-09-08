@@ -70,28 +70,28 @@ export default function TableClass() {
         setEditData(null);
     };
 
-    
-const handleSave = async () => {
-    try {
-      const studentRef = doc(db, 'class', editData.id);
-      // Update all relevant fields
-      await updateDoc(studentRef, {
-        firstName: editData.firstName,
-        lastName: editData.lastName,
-        email: editData.email,
-        dob: editData.dob,  // Add more fields if needed
-        phone: editData.phone,
-        qualification: editData.qualification,
-      });
-      
-      // Update the local rows state with the updated data
-      const updatedRows = rows.map(row => row.id === editData.id ? editData : row);
-      setRows(updatedRows);
-      handleCloseDialog();
-    } catch (error) {
-      console.error('Error updating document: ', error);
-    }
-  };
+
+    const handleSave = async () => {
+        try {
+            const studentRef = doc(db, 'class', editData.id);
+            // Update all relevant fields
+            await updateDoc(studentRef, {
+                firstName: editData.firstName,
+                lastName: editData.lastName,
+                email: editData.email,
+                dob: editData.dob,  // Add more fields if needed
+                phone: editData.phone,
+                qualification: editData.qualification,
+            });
+
+            // Update the local rows state with the updated data
+            const updatedRows = rows.map(row => row.id === editData.id ? editData : row);
+            setRows(updatedRows);
+            handleCloseDialog();
+        } catch (error) {
+            console.error('Error updating document: ', error);
+        }
+    };
     const columns = [
         { field: 'id', headerName: 'ID', width: 200 },
         { field: 'firstName', headerName: 'First name', width: 110 },
@@ -115,15 +115,25 @@ const handleSave = async () => {
 
     return (
         <>
-            <Paper sx={{ height: 400, width: '100%' }}>
-                <DataGrid
-                    rows={rows}
-                    columns={columns}
-                    initialState={{ pagination: { paginationModel } }}
-                    pageSizeOptions={[5, 10]}
-                    checkboxSelection
-                    sx={{ border: 0 }}
-                />
+            <Paper sx={{
+                height: 400, width: '100%', overflowX: 'auto', '@media (max-width: 1024px)': {
+                    width: '695px'
+                }, '@media (max-width: 768px)': {
+                    width: '720px'
+                }, '@media (max-width: 600px)': {
+                    width: '380px'
+                }
+            }}>
+                <div style={{ maxwidth: '100%' }}> {/* Set a minimum width larger than the total column width */}
+                    <DataGrid
+                        rows={rows}
+                        columns={columns}
+                        initialState={{ pagination: { paginationModel } }}
+                        pageSizeOptions={[5, 10]}
+                        checkboxSelection
+                        sx={{ border: 0 }}
+                    />
+                </div>
             </Paper>
             <Dialog open={openDialog} onClose={handleCloseDialog}>
                 <DialogTitle>Edit Student</DialogTitle>

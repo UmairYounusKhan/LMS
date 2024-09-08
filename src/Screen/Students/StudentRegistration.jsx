@@ -366,39 +366,3 @@ export default function StudentRegistration() {
     </Box>
   );
 }
-//   {
-//   return (
-//     <div>
-
-//       <PermanentDrawerLeft/>
-//       <form>
-//         <h1>Student Registration Form</h1>
-//         <label htmlFor="">First Name:</label>
-//         <input type="text" placeholder='Enter Your First Name' />
-//         <label htmlFor="">Last Name:</label>
-//         <input type="text" placeholder='Enter Your Last Name' />
-//         <label htmlFor="">Email:</label>
-//         <input type="email" placeholder='Enter Your Email' />
-//         <label htmlFor="">Password:</label>
-//         <input type="password" placeholder='Enter Your Password' />
-//         <FormControl sx={{marginLeft:'15px'}}>
-//       <FormLabel id="demo-radio-buttons-group-label" sx={{marginLeft:'-1px'}} >Gender</FormLabel>
-//       <RadioGroup
-//         aria-labelledby="demo-radio-buttons-group-label"
-//         defaultValue="female"
-//         name="radio-buttons-group"
-//       >
-//         <FormControlLabel value="female" control={<Radio />} label="Female" />
-//         <FormControlLabel value="male" control={<Radio />} label="Male" />
-//         <FormControlLabel value="other" control={<Radio />} label="Other" />
-//       </RadioGroup>
-//     </FormControl>
-//         <button class="Button" type="submit">Submit</button>
-//       </form>
-
-
-//     </div>
-//   )
-// }
-
-// export default StudentRegistration

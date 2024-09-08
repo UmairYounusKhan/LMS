@@ -44,20 +44,26 @@ const Signup = () => {
   const handleGoogle = () => {
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
+  
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
+        if (credential) {
+          const token = credential.accessToken;
+        }
         const user = result.user;
+        // Navigate to students list page
         navigate('/students/students-list');
       })
       .catch((error) => {
+        console.error('Error during sign-in: ', error.message);
         const errorCode = error.code;
         const errorMessage = error.message;
-        const email = error.customData.email;
+        const email = error.customData?.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
   };
+  
 
   const handleGithub = () => {
     const provider = new GithubAuthProvider();

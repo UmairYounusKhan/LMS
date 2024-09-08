@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
 import { collection, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore';
-import { db } from '../../Config/Firebase'; 
+import { db } from '../../Config/Firebase';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -108,15 +108,25 @@ export default function TableSubjects() {
 
   return (
     <>
-      <Paper sx={{ height: 400, width: '100%' }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          initialState={{ pagination: { paginationModel } }}
-          pageSizeOptions={[5, 10]}
-          checkboxSelection
-          sx={{ border: 0 }}
-        />
+      <Paper sx={{
+        height: 400, width: '100%', overflowX: 'auto', '@media (max-width: 1024px)': {
+          width: '695px'
+        }, '@media (max-width: 768px)': {
+          width: '720px'
+        }, '@media (max-width: 600px)': {
+          width: '380px'
+        }
+      }}>
+        <div style={{ maxwidth: '100%' }}> {/* Set a minimum width larger than the total column width */}
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            initialState={{ pagination: { paginationModel } }}
+            pageSizeOptions={[5, 10]}
+            checkboxSelection
+            sx={{ border: 0 }}
+          />
+        </div>
       </Paper>
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Edit Subject</DialogTitle>
